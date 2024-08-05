@@ -13,7 +13,7 @@ jobs:
       id: get-json-key-value
       uses: christiangda/gha-python-code/read-json-key@main
       with:
-        file: test-file.json
+        path: test-file.json
         key: 'ID'
 
     - name: Output JSON key value
