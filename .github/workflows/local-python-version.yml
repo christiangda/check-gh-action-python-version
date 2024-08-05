@@ -9,8 +9,13 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Check Python version
+    - name: Get JSON key value
+      id: get-json-key-value
+      uses: christiangda/gha-python-code/read-json-key@main
+      with:
+        file: test-file.json
+        key: 'ID'
+
+    - name: Output JSON key value
       run: |
-        python --version
-        python -m pip --version
-        pip list
+        echo "The value of the key is ${{ steps.get-json-key-value.outputs.value }}"
