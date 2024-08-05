@@ -1,0 +1,16 @@
+name: Check Python version
+
+on: [push]
+
+jobs:
+  check-python-version:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Check Python version
+      run: |
+        python --version
+        python -m pip --version
+        pip list
