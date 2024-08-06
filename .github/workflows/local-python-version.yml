@@ -1,6 +1,9 @@
 name: Check Python version
 
-on: [push]
+on:
+  - push
+  - pull_request
+  - workflow_dispatch
 
 jobs:
   check-python-version:
