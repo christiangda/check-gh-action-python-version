@@ -9,13 +9,24 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-    - name: Get JSON key value
-      id: get-json-key-value
-      uses: christiangda/gha-python-code/read-json-key@main
+    - name: Get key value from JSON file
+      id: get-key-value-json
+      uses: christiangda/gha-python-code/read-key@main
       with:
-        path: test-file.json
+        file: test-file.json
         key: 'ID'
 
     - name: Output JSON key value
       run: |
-        echo "The value of the key is ${{ steps.get-json-key-value.outputs.value }}"
+        echo "The value of the key is ${{ steps.get-key-value-json.outputs.value }}"
+
+    - name: Get key value from YAML file
+      id: get-key-value-yaml
+      uses: christiangda/gha-python-code/read-key@main
+      with:
+        file: test-file.yaml
+        key: 'ID'
+
+    - name: Output YAML key value
+      run: |
+        echo "The value of the key is ${{ steps.get-key-value-yaml.outputs.value }}"
