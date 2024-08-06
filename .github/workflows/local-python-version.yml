@@ -12,6 +12,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name : Check Python version
+      run: |
+        python --version
+        pip --version
+
+    - name: Check pip list
+      run: |
+        pip list
+
     - name: Get key value from JSON file
       id: get-key-value-json
       uses: christiangda/gha-python-code/read-key@main
