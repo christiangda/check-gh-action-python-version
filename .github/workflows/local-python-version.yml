@@ -1,4 +1,4 @@
-name: Check Python version
+name: Run Python actions
 
 on:
   - push
@@ -6,7 +6,7 @@ on:
   - workflow_dispatch
 
 jobs:
-  check-python-version:
+  run-python-actions:
     runs-on: ubuntu-latest
 
     steps:
